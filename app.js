@@ -37,10 +37,14 @@ app.use( expressLayouts );
 
 var mongoDB = require( './config/mongoDB.js' );
 
-
-
+//bootsrap and jquery
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/fonts', express.static(__dirname + '/node_modules/bootstrap/dist/fonts'));
 app.use( '/', routes );
 app.use( '/users', users );
+
 
 // catch 404 and forward to error handler
 app.use( function( req, res, next ) {

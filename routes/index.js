@@ -23,6 +23,12 @@ router.get( '/login', function( req, res ) {
         title: 'Login'
     } );
 } );
+//landing page
+router.get( '/', function( req, res ) {
+    res.render( 'index', {
+        title: 'Test App'
+    } );
+} );
 
 router.use( function( req, res, next ) {
 
